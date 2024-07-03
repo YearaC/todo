@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+    background-image: url("img/cloud.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+
+.container{
+    background-color: bisque;
+    min-height: 100vh;
+    box-shadow:rgba(166, 241, 150, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.task-area{
+    border: 1px solid lightgray;
+    margin-top: 2em;
+}
+
+.task-tabs{
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    position: relative;
+}
+
+
+.task-tabs div{
+    padding: 1em;
+}
+ 
+#under-line{
+    height: 4px;
+    background-color: pink;
+    position: absolute;
+    width: 80px;
+    left: 0px;
+    top: 52px;
+    padding: 0px;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.task-done.completd{
+    text-decoration: line-through;
+}
+
+#add-button{
+    border-radius: solid 1px pink;
+}
+
+.rotate{
+
+color: blue;
+background-color: bisque;
+}
+
+.check{
+    
+    color: blue;
+    background-color: bisque;
+}
+
+.trash{
+    border-radius: 40%;
+    background-color: bisque;
+    color: red;
+}
+
+button{
+    border-radius: 90%;
+    border: solid 2px orangered;
+    background-color: bisque;
+}
+

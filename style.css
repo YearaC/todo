@@ -42,3 +42,36 @@ body{
     justify-content: space-between;
     padding: 1em;
 }
+
+.task-done.completd{
+    text-decoration: line-through;
+}
+
+#add-button{
+    border-radius: solid 1px pink;
+}
+
+.rotate{
+
+color: blue;
+background-color: bisque;
+}
+
+.check{
+    
+    color: blue;
+    background-color: bisque;
+}
+
+.trash{
+    border-radius: 40%;
+    background-color: bisque;
+    color: red;
+}
+
+button{
+    border-radius: 90%;
+    border: solid 2px orangered;
+    background-color: bisque;
+}
+

@@ -32,9 +32,9 @@ function addTask() {
 }
 
 function render() {
-    let resultHTML = "";
+    let resultHTML = ``;
     for (let i = 0; i < taskList.length; i++) {
-        if(taskList[i].isComplete){
+        if(taskList[i].isComplete == true){
             resultHTML+=`<div class="task">
         <div class="task-done completd"> ${taskList[i].taskContent} </div>
         <div>
@@ -45,7 +45,7 @@ function render() {
     </div>`;
         }else {
             resultHTML+=`<div class="task">
-            <div class="task-done"> ${taskList[i].taskContent} </div>
+            <div>${taskList[i].taskContent}</div>
             <div>
                 <button onclick="toggleComplete('${taskList[i].id}')"><i class="check fa-solid fa-check"></i></button>
                 <button onclisk="deleteTask('${taskList[i].id}')"><i class="trash fa-solid fa-trash"></i></button>
@@ -63,12 +63,13 @@ function render() {
 
 function toggleComplete(id){
  
- for(let i= 0; i < taskList.length;i++){
-    if(taskList[i].id === id){
-        taskList[i].isComplete = !taskList[i].isComplete;
-        break;
+    console.log("id:", id)
+    for (let i = 0; i<taskList.length; i++) {
+        if (taskList[i].id == id ) {
+            taskList[i].isComplete = !taskList[i].isComplete;
+            break;
+        }
     }
- }
  render();
 
  console.log(taskList);
@@ -82,7 +83,7 @@ function deleteTask(id){
         }
     }
     render();
-    console.log(taskList);
+   
 }
 
 

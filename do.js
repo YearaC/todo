@@ -34,27 +34,23 @@ function addTask() {
 function render() {
     let resultHTML = ``;
     for (let i = 0; i < taskList.length; i++) {
-        if(taskList[i].isComplete == true){
-            resultHTML+=`<div class="task">
-        <div class="task-done completd"> ${taskList[i].taskContent} </div>
-        <div>
-            <button onclick="toggleComplete('${taskList[i].id}')"><i class="rotate fa-solid fa-rotate-right "></i></button>
-            <button onclick="deleteTask('${taskList[i].id}')"><i class="trash fa-solid fa-trash"></i></button>
-        </div>
-
-    </div>`;
-        }else {
-            resultHTML+=`<div class="task">
-            <div>${taskList[i].taskContent}</div>
-            <div>
-                <button onclick="toggleComplete('${taskList[i].id}')"><i class="check fa-solid fa-check"></i></button>
-                <button onclisk="deleteTask('${taskList[i].id}')"><i class="trash fa-solid fa-trash"></i></button>
-            </div>
-    
-        </div>`;
-
+        if (taskList[i].isComplete) {
+            resultHTML += `<div class="task completed" id="task-${taskList[i].id}">
+                <div class="task-done">${taskList[i].taskContent}</div>
+                <div>
+                    <button onclick="toggleComplete('${taskList[i].id}')"><i class="rotate fa-solid fa-rotate-right"></i></button>
+                    <button onclick="deleteTask('${taskList[i].id}')"><i class="trash fa-solid fa-trash"></i></button>
+                </div>
+            </div>`;
+        } else {
+            resultHTML += `<div class="task" id="task-${taskList[i].id}">
+                <div>${taskList[i].taskContent}</div>
+                <div>
+                    <button onclick="toggleComplete('${taskList[i].id}')"><i class="check fa-solid fa-check"></i></button>
+                    <button onclick="deleteTask('${taskList[i].id}')"><i class="trash fa-solid fa-trash"></i></button>
+                </div>
+            </div>`;
         }
-        
     }
 
 

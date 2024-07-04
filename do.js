@@ -19,7 +19,25 @@ let taskList = [];
 let mode= 'all';
 let filterList = [];
 
+let horizontalBar = document.getElementById("under-line");
+let horizontalMenus = document.querySelectorAll('#all, #ongoing, #done');
+
 addButton.addEventListener("click", addTask);
+
+function horizontalIndicator(e) {
+    horizontalBar.style.left = e.offsetLeft + "px";
+    horizontalBar.style.width = e.offsetWidth + "px";
+    horizontalBar.style.top = e.offsetTop + e.offsetHeight + "px";
+  }
+
+horizontalMenus.forEach((menu) =>
+    menu.addEventListener("click", (e) =>
+      horizontalIndicator(e.currentTarget)
+    )
+  );
+  
+
+
 
 for (let i = 1; i < tabs.length; i++) {
     tabs[i].addEventListener("click", function (event) {
@@ -68,7 +86,10 @@ function render() {
                     <button onclick="deleteTask('${list[i].id}')"><i class="trash fa-solid fa-trash"></i></button>
                 </div>
             </div>`;
-        } else {
+        }
+        
+        
+        else {
             resultHTML += `<div class="task">
                 <div>${list[i].taskContent}</div>
                 <div>
@@ -116,6 +137,7 @@ function filter(event) {
     } else if (mode === "ongoing") {
         //진행중인 아이템을 보여준다.
         //task.isComplete =false
+    
         for (let i = 0; i < taskList.length; i++) {
             if (taskList[i].isComplete ===false){
                 filterList.push(taskList[i])

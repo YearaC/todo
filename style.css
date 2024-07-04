@@ -1,99 +1,146 @@
-body{
+/* 기본 스타일 */
+body {
     margin: 0;
     background-image: url("img/cloud.avif");
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input-area {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    
+}
+
+#task-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+#add-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#add-button:hover {
+    background-color: #218838;
+}
+
+.task-area {
+    margin-top: 20px;
+}
+
+.task-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+    font-family: "Gaegu", sans-serif;
+  font-weight: 700;
+  font-size: larger;
+    
+}
+
+.task-tabs div {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
    
 }
 
-.container{
-    background-color: bisque;
-    min-height: 100vh;
-    box-shadow:rgba(166, 241, 150, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-}
-.task-area{
-    border: 1px solid lightgray;
-    margin-top: 2em;
+.task-tabs div:hover {
+    background-color: #e9ecef;
 }
 
-.task-tabs{
-    display: flex;
-    border-bottom: 1px solid lightgray;
-    position: relative;
-}
-
-
-.task-tabs div{
-    padding: 1em;
-}
- 
-#under-line{
-    height: 4px;
-    background-color: pink;
+#under-line {
     position: absolute;
-    width: 80px;
-    left: 0px;
-    top: 52px;
-    padding: 0px;
+    top: 2rem;
+    left: 1rem;
+    width: 5%; 
+    height: 2px;
+    background-color: #007bff;
+    transition: left 0.3s, width 0.3s;
 }
 
-.task{
+.task {
     display: flex;
     justify-content: space-between;
-    padding: 1em;
-    margin: 5px 0;
-    border: 1px solid #ccc;
+    align-items: center;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
-.task-done{
+.task-done {
     text-decoration: line-through;
-    background-color: #f0f0f0;
+    color: #888;
 }
 
-.task.completed {
-    background-color: #f0f0f0; 
+.task div {
+    display: flex;
+    align-items: center;
 }
 
-#add-button{
-    border-radius: solid 1px pink;
-}
-
-.rotate{
-
-color: blue;
-background-color: bisque;
-}
-
-.check{
-    
-    color: blue;
-    background-color: bisque;
-}
-
-.trash{
-    border-radius: 40%;
-    background-color: bisque;
-    color: red;
-}
-
-button{
-    border-radius: 90%;
-    border: solid 2px orangered;
-    background-color: bisque;
-}
-
-.task-tabs div{
+.task button {
+    background: none;
+    border: none;
     cursor: pointer;
+    font-size: 16px;
+    color: #007bff;
+    margin-left: 10px;
+    transition: color 0.3s;
 }
 
-#under-line{
-    position: absolute;
-    left:0;
-    height: 4px;
-    width: 0;
-    border-radius: 3px;
-    transition: 0.5s;
-    background-color: pink;
-    top:0;
+.task button:hover {
+    color: #0056b3;
+}
 
+.rotate {
+    color: #28a745;
+}
+
+.rotate:hover {
+    color: #218838;
+}
+
+.trash {
+    color: #dc3545;
+}
+
+.trash:hover {
+    color: #c82333;
 }

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Example</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+
+        #myDiv {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- css 클래스의 토글 -->
+    <div id="myDev">Click me to toggle highlight</div>
+
+    <!-- DOM 요소의 표시/숨김 토글 -->
+
+    <button id="toggleButton">Toggle Visibility</button>
+    <div id="myDiv">Hello, I am a toggled element!</div>
+
+
+    <script>
+        //css 클래스의 토글 
+        let myDev = document.getElementById('myDev');
+
+        myDev.addEventListener('click', function() {
+            myDev.classList.toggle('highlight');
+        });
+
+        //DOM 요소의 표시/숨김 토글
+
+        let toggleButton = document.getElementById('toggleButton');
+        let myDiv = document.getElementById('myDiv');
+
+        toggleButton.addEventListener('click', function() {
+            if (myDiv.style.display === 'none') {
+                myDiv.style.display = 'block';
+            } else {
+                myDiv.style.display = 'none';
+            }
+        });
+    </script>
+
+    <!-- toggle
+     JavaScript에서 toggle은 일반적으로 두 가지 상태를 번갈아 가며 전환하는 것을 의미합니다. 
+
+     대표적인 예로는 Boolean 값의 전환, CSS 클래스의 토글, DOM 요소의 표시/숨김 토글 등이 있습니다.
+
+     Boolean 값을 true에서 false로, 또는 그 반대로 전환할 때 사용합니다.
+      예를 들어, 체크박스의 상태를 변경하거나 할 일 완료 여부를 변경할 때 사용됩니다.
+
+      let isComplete = false;
+
+function toggleComplete() {
+    isComplete = !isComplete;
+    console.log(isComplete); // true -> false -> true ...
+}
+
+toggleComplete(); // 실행할 때마다 isComplete 값이 반전됩니다.
+    
+    
+    
+    
+    
+    
+    -->
+
+
+
+</body>
+</html>
+

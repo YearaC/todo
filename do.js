@@ -19,7 +19,7 @@ let taskList = [];
 let mode= 'all';
 let filterList = [];
 
-let horizontalBar = document.getElementById("under-line");
+let horizontalBar = document.getElementById("under-line");//가로 under bar 움직이기
 let horizontalMenus = document.querySelectorAll('#all, #ongoing, #done');
 
 addButton.addEventListener("click", addTask);
@@ -28,7 +28,7 @@ taskInput.addEventListener("focus",function(){taskInput.value= "";})
 taskInput.addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
         addTask();
-    }
+    } //새 할일 입력을 엔터로 입력
 });
 
 
@@ -58,7 +58,7 @@ for (let i = 1; i < tabs.length; i++) {
 
 // + 버튼을 클릭하면, 할일이 추가된다
 function addTask() {
-    let taskContent = taskInput.value.trim();
+    let taskContent = taskInput.value.trim();//trim() 메서드는 문자열 양 끝의 공백을 제거합니다. 
 
     if (taskContent === "") {
         alert("할 일을 입력하세요."); // 입력값이 비어 있을 경우 알림을 통해 사용자에게 알림
@@ -68,7 +68,7 @@ function addTask() {
 
     let task = {
         id: randomIDGenerate(),
-        taskContent: taskContent,
+        taskContent: taskContent, //객체 리터럴 문법-taskContent 속성은 사용자가 입력한 할 일 내용(taskContent 변수의 값)을 저장합니다.
         isComplete: false,
 
     };
@@ -127,7 +127,6 @@ function render() {
 
 function toggleComplete(id) {
 
-    console.log("id:", id)
     for (let i = 0; i < taskList.length; i++) {
         if (taskList[i].id == id) {
             taskList[i].isComplete = !taskList[i].isComplete;
